@@ -62,6 +62,12 @@ class SignInVC: UIViewController {
                     self.alertTheUser(title: "Problem With Creating A New User", message: message!)
                 } else {
                     
+                    UberHandler.Instance.rider = self.emailTextField.text!;
+                    
+                    self.emailTextField.text = "";
+                    self.passwordTextField.text = "";
+
+                    
                     self.performSegue(withIdentifier: self.RIDER_SEGUE, sender: nil);
                     
                 }

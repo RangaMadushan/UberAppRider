@@ -12,6 +12,7 @@ import FirebaseDatabase
 //protocol eka
 protocol UberController: class {
     func canCallUber(delegateCalled: Bool);
+    func driverAcceptedRequest(requestedAccepted: Bool, driverName: String);
 }
 
 class UberHandler {
@@ -61,6 +62,37 @@ class UberHandler {
                 }
                 
             }
+        }
+        
+        //DRIVER ACCEPTED UBER
+        DBProvider.Instance.requestAcceptedRef.observe(DataEventType.childAdded) { (snapshot: DataSnapshot) in
+            
+            if let data = snapshot.value as? NSDictionary {
+            
+                if let name = data[Constants.NAME] as? String {
+                    if self.driver == "" {
+                        self.driver = name;
+                        self.delegate?.driverAcceptedRequest(requestedAccepted: true, driverName: self.driver);
+                    }
+                }
+            }
+            
+        }
+        
+        //DRIVER CANCELED UBER
+        DBProvider.Instance.requestAcceptedRef.observe(DataEventType.childRemoved) { (snapshot: DataSnapshot) in
+            
+            if let data = snapshot.value as? NSDictionary {
+                if let name = data[Constants.NAME] as? String {
+                
+                    if name == self.driver {
+                        self.driver = "";
+                        self.delegate?.driverAcceptedRequest(requestedAccepted: false, driverName: name);
+                    }
+                }
+            }
+            
+            
         }
     
     }//observeMessagesForRider
