@@ -29,10 +29,16 @@ class DBProvider {
     
     
     //request ref
-    
+    var requestRef: DatabaseReference {
+        return dbRef.child(Constants.UBER_REQUEST);
+    }
     
     
     //request Accepted
+    var requestAcceptedRef: DatabaseReference {
+        return dbRef.child(Constants.UBER_ACCEPTED);
+    }
+    
     
     
     func saveUser(withID: String, email: String, password: String){

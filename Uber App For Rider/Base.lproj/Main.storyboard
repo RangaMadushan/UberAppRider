@@ -98,7 +98,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efE-0m-AzP">
-                                <frame key="frameInset" minX="155" minY="394" width="64" height="30"/>
+                                <frame key="frameInset" minX="124" minY="395" width="126" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Call Uber"/>
                                 <connections>
@@ -109,6 +109,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="callUberBtn" destination="efE-0m-AzP" id="gU6-p4-DiC"/>
                         <outlet property="myMap" destination="PwY-CX-9jI" id="MQ5-H2-kO5"/>
                     </connections>
                 </viewController>

@@ -12,6 +12,7 @@
 		BC22A4BD205B19B7006A0EB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC22A4BB205B19B7006A0EB1 /* Main.storyboard */; };
 		BC22A4BF205B19B7006A0EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC22A4BE205B19B7006A0EB1 /* Assets.xcassets */; };
 		BC22A4C2205B19B7006A0EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC22A4C0205B19B7006A0EB1 /* LaunchScreen.storyboard */; };
+		BC6EF48D205E6F9E00FE7473 /* UberHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6EF48C205E6F9E00FE7473 /* UberHandler.swift */; };
 		BCB9BAFA205D04F400C8CA82 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9BAF9205D04F400C8CA82 /* SignInVC.swift */; };
 		BCB9BB03205D1DAD00C8CA82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCB9BB02205D1DAD00C8CA82 /* GoogleService-Info.plist */; };
 		BCB9BB0B205D2ED200C8CA82 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9BB0A205D2ED200C8CA82 /* AuthProvider.swift */; };
@@ -30,6 +31,7 @@
 		BC22A4BE205B19B7006A0EB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC22A4C1205B19B7006A0EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC22A4C3205B19B7006A0EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC6EF48C205E6F9E00FE7473 /* UberHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UberHandler.swift; sourceTree = "<group>"; };
 		BCB9BAF9205D04F400C8CA82 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		BCB9BB02205D1DAD00C8CA82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BCB9BB0A205D2ED200C8CA82 /* AuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				BCB9BB0A205D2ED200C8CA82 /* AuthProvider.swift */,
 				BCB9BB10205DA26D00C8CA82 /* DBProvider.swift */,
 				BCB9BB12205DA4A200C8CA82 /* Constants.swift */,
+				BC6EF48C205E6F9E00FE7473 /* UberHandler.swift */,
 			);
 			name = Plugins;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				BCB9BAFA205D04F400C8CA82 /* SignInVC.swift in Sources */,
 				BCB9BB11205DA26D00C8CA82 /* DBProvider.swift in Sources */,
 				BC22A4B8205B19B7006A0EB1 /* AppDelegate.swift in Sources */,
+				BC6EF48D205E6F9E00FE7473 /* UberHandler.swift in Sources */,
 				BCB9BB0D205D8F9800C8CA82 /* RiderVC.swift in Sources */,
 				BCB9BB13205DA4A200C8CA82 /* Constants.swift in Sources */,
 			);

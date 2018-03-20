@@ -9,21 +9,29 @@
 import UIKit
 import MapKit
 
-class RiderVC: UIViewController, MKMapViewDelegate,CLLocationManagerDelegate {
+class RiderVC: UIViewController, MKMapViewDelegate,CLLocationManagerDelegate, UberController {
     
     
     
     @IBOutlet weak var myMap: MKMapView!
+    
+    @IBOutlet weak var callUberBtn: UIButton!
+    
 
     private var locationManager = CLLocationManager();
     private var userLocation: CLLocationCoordinate2D?;
     //    private var driverLocation: CLLocationCoordinate2D?;
     
+    private var canCallUber = true;
+    private var riderCanceledRequest = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initializeLocationManager();
+        UberHandler.Instance.observeMessagesForRider();
+        
+        UberHandler.Instance.delegate = self;
     }
     
     
@@ -52,19 +60,38 @@ class RiderVC: UIViewController, MKMapViewDelegate,CLLocationManagerDelegate {
             
             let annotation = MKPointAnnotation();
             annotation.coordinate = userLocation!;
-            annotation.title = "Driver Location";
+            annotation.title = "Rider Location";
             myMap.addAnnotation(annotation);
             
         }
     } //an overide func
     
 
-    
+    func canCallUber(delegateCalled: Bool) {
+        if delegateCalled {
+            callUberBtn.setTitle("Cancel Uber", for: UIControlState.normal);
+            canCallUber = false;
+        }else{
+        
+            callUberBtn.setTitle("Call Uber", for: UIControlState.normal);
+            canCallUber = true;
+        }
+    }// func can call uber
  
 
 
     @IBAction func callUber(_ sender: AnyObject) {
         
+        if userLocation != nil {
+            if canCallUber {
+                
+                UberHandler.Instance.requestUber(latitude: Double(userLocation!.latitude), longitude: Double(userLocation!.longitude));
+            }else{
+                riderCanceledRequest = true;
+                //cancel uber
+                UberHandler.Instance.cancelUber();
+            }
+        }
         
     }//call uber btn
     

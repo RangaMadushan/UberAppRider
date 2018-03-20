@@ -32,6 +32,11 @@ class SignInVC: UIViewController {
                     self.alertTheUser(title: "Problem With Authentication", message: message!)
                 } else {
                     
+                    UberHandler.Instance.rider = self.emailTextField.text!;
+                    
+                    self.emailTextField.text = "";
+                    self.passwordTextField.text = "";
+                    
                     self.performSegue(withIdentifier: self.RIDER_SEGUE, sender: nil); //bcz in the closure we have to put self.
                     
                 }
